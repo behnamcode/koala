@@ -77,6 +77,14 @@ export const foodsItems = [
   img:'img/Burger.jpeg',
   section:'Burger'
 },
+  {name:'Burger & Patty',
+  img:'img/Burger5.jpeg',
+  section:'Burger'
+},
+  {name:'Burger& Spinach',
+  img:'img/Burger4.jpeg',
+  section:'Burger'
+},
   {name:'Veggi',
   img:'img/Veggi.jpeg',
   section:'Veggi'
