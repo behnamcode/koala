@@ -2,12 +2,12 @@ import React from 'react';
 // next line is fo creating global style
 import { createGlobalStyle } from 'styled-components';
 import { NavBar } from './NavBar/NavBar';
-
+import { Banner } from './Banner/Banner';
 //defining a global style 0-2
 const GlobalStyle = createGlobalStyle`
   body{
-    background-color: ${props => props.bgColor ? '#007090' : '#77AD78'};
-    color: ${props => props.whiteColor ? 'white' :'black' };
+    background-color: ${props => (props.bgColor ? '#007090' : '#77AD78')};
+    color: ${props => (props.whiteColor ? 'white' : 'black')};
     //0-4
     font-family: 'Open Sans', sans-serif;
     margin:0;
@@ -22,9 +22,10 @@ function App() {
   return (
     //0-3
     <>
-      <GlobalStyle whiteColor  bgColor/>
+      <GlobalStyle whiteColor bgColor />
       {/* 0-9 */}
-      <NavBar/>
+      <NavBar />
+      <Banner />
       <div>hello sliceline</div>
     </>
   );
