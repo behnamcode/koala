@@ -3,11 +3,12 @@ import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { NavBar } from './NavBar/NavBar';
 import { Banner } from './Banner/Banner';
+import {Menu} from './Menu/Menu'
 //defining a global style 0-2
 const GlobalStyle = createGlobalStyle`
   body{
-    background-color: ${props => (props.bgColor ? '#007090' : '#77AD78')};
-    color: ${props => (props.whiteColor ? 'white' : 'black')};
+    background-color: ${props => (props.bgColor ? '#C50905' : '#77AD78')};
+    color: ${props => (props.whiteColor ? '#F6E420' : 'black')};
     //0-4
     font-family: 'Open Sans', sans-serif;
     margin:0;
@@ -26,7 +27,7 @@ function App() {
       {/* 0-9 */}
       <NavBar />
       <Banner />
-      <div>hello sliceline</div>
+      <Menu/>
     </>
   );
 }
