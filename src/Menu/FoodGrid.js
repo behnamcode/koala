@@ -12,6 +12,10 @@ export const FoodLabel = styled.div `
   position:absolute;
   background-color: #beee62a1;
   padding:5px;
+  &:hover{
+    background-color: red;
+  }
+
 `
 //almost 16 but! in this step we import Title to use the
 //font family and the color
@@ -25,10 +29,16 @@ export const Food = styled(Title) `
   font-size:30px;
   color:white;
   border-radius:7px;
-  box-shadow: 0px 0px 6px 0px #2cb1bb;
+  margin-top:5px;
+  transition-property : box-shadow margin-top filter;
+  transition-duration:.1s;
+  
   text-shadow: 1px 1px 5px black;
   &:hover {
     cursor:pointer;
-    opacity: 0.9;
+    margin-top:0px;
+    margin-bottom:5px;
+    filter:contrast(100%);
+    box-shadow: 0px 4px 10px 0px #F6E420;
   }
 `
