@@ -11,7 +11,10 @@ const MenuStyled = styled.div`
 export function Menu() {
   return (
     <MenuStyled>
-      <h1>Menu</h1>
+      {/* completing step 18 */}
+      {Object.entries(foods).map(([sectionName,foods])=>(
+        <>
+        <h1>{sectionName}</h1>
       {/*   from step 14 and 15*/}
       <FoodGrid>
         {foods.map(food => (
@@ -21,6 +24,8 @@ export function Menu() {
           </Food>
         ))}
       </FoodGrid>
+        </>
+      ))}
     </MenuStyled>
   );
 }
