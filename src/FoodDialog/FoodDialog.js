@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import {FoodLabel} from '../Menu/FoodGrid';
+import {pizzaRed} from '../Styles/colors'
+import { Title } from '../Styles/Title';
+
 //step 20 or 19 continuation
 
 const Dialog = styled.div`
@@ -15,13 +18,27 @@ const Dialog = styled.div`
   flex-direction : column;
 `;
 
-const DialogContent =styled.div `
+export const DialogContent =styled.div `
   overflow:auto;
   min-height : 100px;
 `
-const DialogFooter = styled.div `
-  box-shadow: 0px 2px 20px 0px grey;
+export const DialogFooter = styled.div `
+  box-shadow: 0px -2px 10px 0px grey;
   height:60px;
+  display:flex;
+  justify-content:center;
+`
+// step 24
+ export const ConfirmButton = styled(Title) `
+    margin :10px;
+    color:white;
+    height: 20px;
+    border-radius: 5px;
+    padding : 10px;
+    text-align : center;
+    width:200px;
+    cursor: pointer;
+    background-color: ${pizzaRed};
 `
 
 const DialogShadow = styled.div`
@@ -65,7 +82,7 @@ export function FoodDialog({ openFood, setOpenFood }) {
         {/* from step 23 */}
         <DialogContent></DialogContent>
         <DialogFooter>
-
+          <ConfirmButton>Confirm</ConfirmButton>
         </DialogFooter>
       </Dialog>
     </>
