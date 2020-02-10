@@ -1,6 +1,7 @@
 //15
 import styled from 'styled-components';
-import {Title} from '../Styles/Title'
+import {Title} from '../Styles/Title';
+
 export const FoodGrid = styled.div `
   display:grid;
   grid-template-columns :1fr 1fr 1fr;
@@ -8,7 +9,7 @@ export const FoodGrid = styled.div `
 `
 
 //17
-export const FoodLabel = styled.div `
+export const FoodLabel = styled(Title) `
   position:absolute;
   background-color: #beee62a1;
   padding:5px;
@@ -19,7 +20,7 @@ export const FoodLabel = styled.div `
 `
 //almost 16 but! in this step we import Title to use the
 //font family and the color
-export const Food = styled(Title) `
+export const Food = styled.div `
   height: 100px;
   background-image: ${({img}) => `url(${img});` };
   background-position: center;
