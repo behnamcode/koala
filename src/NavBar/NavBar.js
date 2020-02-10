@@ -22,7 +22,7 @@ export function NavBar() {
   return (
     <NavBarStyled>
       <Logo>
-        Slice Line <span>🍕</span>
+        Slice Line <span role='img' aria-label='slice line'>🍕</span>
       </Logo>
     </NavBarStyled>
   );
