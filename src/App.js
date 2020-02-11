@@ -9,10 +9,12 @@ import { GlobalStyle } from './Styles/GlobalStyle';
 import { Order } from './Order/Order';
 import { useOpenFood } from './Hooks/useOpenFood';
 import { useOrders } from './Hooks/useOrdes';
+import { useTitle } from './Hooks/useTitle';
 
 function App() {
   const openFood = useOpenFood();
   const orders = useOrders();
+  useTitle({...openFood,...orders});
   return (
     //0-3
     <>
