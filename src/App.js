@@ -1,25 +1,28 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 //step 19-in this step we entered the Hook
 // next line is for creating global style
 import { NavBar } from './NavBar/NavBar';
 import { Banner } from './Banner/Banner';
-import {Menu} from './Menu/Menu';
-import {FoodDialog} from './FoodDialog/FoodDialog'
-import {GlobalStyle} from './Styles/GlobalStyle';
-import {Order} from './Order/Order';
-function App() {
+import { Menu } from './Menu/Menu';
+import { FoodDialog } from './FoodDialog/FoodDialog';
+import { GlobalStyle } from './Styles/GlobalStyle';
+import { Order } from './Order/Order';
+import { useOpenFood } from './Hooks/useOpenFood';
+import { useOrders } from './Hooks/useOrdes';
 
-  const [openFood,setOpenFood] = useState();
+function App() {
+  const openFood = useOpenFood();
+  const orders = useOrders();
   return (
     //0-3
     <>
       <GlobalStyle whiteColor bgColor />
-      <FoodDialog openFood={openFood} setOpenFood={setOpenFood}/>
+      <FoodDialog {...openFood} {...orders} />
       {/* 0-9 */}
       <NavBar />
-      <Order/>
+      <Order {...orders} />
       <Banner />
-      <Menu setOpenFood={setOpenFood}/>
+      <Menu {...openFood} />
     </>
   );
 }

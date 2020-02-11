@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {FoodLabel} from '../Menu/FoodGrid';
-import {pizzaRed} from '../Styles/colors'
+import { FoodLabel } from '../Menu/FoodGrid';
+import { pizzaRed } from '../Styles/colors';
 import { Title } from '../Styles/Title';
 
 //step 20 or 19 continuation
@@ -14,32 +14,32 @@ const Dialog = styled.div`
   z-index: 5;
   max-height: calc(100% - 100px);
   left: calc(50% - 250px);
-  display:flex;
-  flex-direction : column;
+  display: flex;
+  flex-direction: column;
 `;
 
-export const DialogContent =styled.div `
-  overflow:auto;
-  min-height : 100px;
-`
-export const DialogFooter = styled.div `
+export const DialogContent = styled.div`
+  overflow: auto;
+  min-height: 100px;
+`;
+export const DialogFooter = styled.div`
   box-shadow: 0px -2px 10px 0px grey;
-  height:60px;
-  display:flex;
-  justify-content:center;
-`
+  height: 60px;
+  display: flex;
+  justify-content: center;
+`;
 // step 24
- export const ConfirmButton = styled(Title) `
-    margin :10px;
-    color:white;
-    height: 20px;
-    border-radius: 5px;
-    padding : 10px;
-    text-align : center;
-    width:200px;
-    cursor: pointer;
-    background-color: ${pizzaRed};
-`
+export const ConfirmButton = styled(Title)`
+  margin: 10px;
+  color: white;
+  height: 20px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  cursor: pointer;
+  background-color: ${pizzaRed};
+`;
 
 const DialogShadow = styled.div`
   position: fixed;
@@ -58,31 +58,37 @@ const DialogBanner = styled.div`
   background-position: center;
   background-size: cover;
 `;
-const DialogBannerName= styled(FoodLabel)`
-    top:100px;
-    color:black;
-    background-color: red;
-    font-size:30px;
-    padding:5px 40px;
-`
-export function FoodDialog({ openFood, setOpenFood }) {
+const DialogBannerName = styled(FoodLabel)`
+  top: 100px;
+  color: black;
+  background-color: red;
+  font-size: 30px;
+  padding: 5px 40px;
+`;
+export function FoodDialog({ openFood, setOpenFood, setOrders, orders }) {
   function close() {
     setOpenFood();
-  };
+  }
   if (!openFood) return null;
+
+  const order = {
+    name: openFood.name
+  };
+  function addToOrder() {
+    setOrders([...orders, order]);
+    close();
+  }
   return (
     <>
       <DialogShadow onClick={close} />
       <Dialog>
-        <DialogBanner img={openFood.img} >
-        <DialogBannerName>
-          {openFood.name}
-        </DialogBannerName>
+        <DialogBanner img={openFood.img}>
+          <DialogBannerName>{openFood.name}</DialogBannerName>
         </DialogBanner>
         {/* from step 23 */}
         <DialogContent></DialogContent>
         <DialogFooter>
-          <ConfirmButton>Confirm</ConfirmButton>
+          <ConfirmButton onClick={addToOrder}>Add to order's</ConfirmButton>
         </DialogFooter>
       </Dialog>
     </>
