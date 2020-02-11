@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { foods } from '../Data/FoodData';
 import { Food, FoodGrid, FoodLabel } from './FoodGrid';
-
+import {formatPrice} from '../Data/FoodData'
 //13
 const MenuStyled = styled.div`
   height: 1000px;
@@ -22,8 +22,11 @@ export function Menu({setOpenFood}) {
           <Food img={food.img} onClick={()=>{
             setOpenFood(food);
           }}>
-          {/* Food lable is from step 17 */}
-            <FoodLabel>{food.name}</FoodLabel>
+          {/* Food lable is from step 17 and completed by step 26 */}
+            <FoodLabel>
+            <div>{food.name}</div>
+            <div>{formatPrice(food.price)}</div>
+            </FoodLabel>
           </Food>
         ))}
       </FoodGrid>
