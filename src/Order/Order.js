@@ -15,10 +15,10 @@ const OrderStyled = styled.div`
   top: 48px;
   width: 340px;
   height: calc(100% - 48px);
-  background-color: white;
+  background-color: #e5e5e5;
   z-index: 10;
   box-shadow: 4px 0px 5px 5px grey;
-  color: black;
+  color: #406106;
   display: flex;
   flex-direction: column;
 `;
@@ -37,13 +37,17 @@ const OrderItem = styled.div`
   grid-template-columns: 20px 150px 20px 60px;
   justify-content: space-between;
 `;
+const DetailItem = styled.div`
+  color: grey;
+  font-size: 13px;
+`;
 export function Order({ orders }) {
   //step 30
   const subtotal = orders.reduce((total, order) => {
     return total + getPrice(order);
   }, 0);
   const tax = subtotal * 0.07;
-  const total = subtotal+tax;
+  const total = subtotal + tax;
   return (
     <OrderStyled>
       {orders.length === 0 ? (
@@ -59,6 +63,12 @@ export function Order({ orders }) {
                 <div />
                 <div>{formatPrice(getPrice(order))}</div>
               </OrderItem>
+              <DetailItem>
+                {order.toppings
+                  .filter(t => t.checked)
+                  .map(topping => topping.name)
+                  .join(',')}
+              </DetailItem>
             </OrderContainer>
           ))}
           <OrderContainer>
