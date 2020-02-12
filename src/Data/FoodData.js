@@ -8,14 +8,24 @@ export function formatPrice(price){
 //14
 
 export const foodsItems = [
-  { name: 'Chesse Pizza', img: 'img/Pizza1.jpeg', section: 'Pizza', price: 12 },
+  { 
+    name: 'Chesse Pizza',
+    img: 'img/Pizza1.jpeg',
+    section: 'Pizza',
+    price: 12
+  },
   {
     name: 'Pepperoni Pizza',
     img: 'img/Pizza2.jpeg',
     section: 'Pizza',
     price: 14
   },
-  { name: 'Hot Pizza', img: 'img/Pizza3.jpeg', section: 'Pizza', price: 18.4 },
+  { 
+   name: 'Hot Pizza',
+   img: 'img/Pizza3.jpeg',
+   section: 'Pizza',
+   price: 18.4 
+  },
   {
     name: 'Neapolitan Pizza',
     img: 'img/Pizza4.jpeg',
@@ -107,9 +117,9 @@ export const foodsItems = [
     price: 18.5
   },
   { name: 'Burger', 
-  img: 'img/Burger.jpeg', 
-  section: 'Burger', 
-  price: 9.3 },
+    img: 'img/Burger.jpeg', 
+    section: 'Burger', 
+    price: 9.3 },
   {
     name: 'Burger & Patty',
     img: 'img/Burger5.jpeg',
@@ -123,9 +133,9 @@ export const foodsItems = [
     price: 8.6
   },
   { name: 'Veggie',
-   img: 'img/Veggi.jpeg',
+    img: 'img/Veggi.jpeg',
     section: 'Veggie',
-     price: 1.3 },
+    price: 1.3 },
   {
     name: 'Veggie Dish',
     img: 'img/Veggi2.jpeg',
@@ -145,9 +155,16 @@ export const foodsItems = [
     price: 2.4
   },
   { name: 'Fries', 
-  img: 'img/Fries.jpeg',
-   section: 'Fries',
-    price: 4.6 }
+    img: 'img/Fries.jpeg',
+    section: 'Fries',
+    price: 4.6 
+  },
+  {
+    price:1,
+    name:'Soda',
+    section:'Drinks',
+    choices:['Coke','Sprite','Root Beer']
+  }
 ];
 //this is officialy step 18
 export const foods = foodsItems.reduce((res, food) => {
