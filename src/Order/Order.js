@@ -50,7 +50,7 @@ const DetailItem = styled.div`
   color: grey;
   font-size: 13px;
 `;
-export function Order({ orders, setOrders,setOpenFood }) {
+export function Order({ orders, setOrders,setOpenFood,LoggedIn,login}) {
   //step 30
   const subtotal = orders.reduce((total, order) => {
     return total + getPrice(order);
@@ -124,7 +124,15 @@ export function Order({ orders, setOrders,setOpenFood }) {
         </OrderContent>
       )}
       <DialogFooter>
-        <ConfirmButton>Checkout</ConfirmButton>
+        <ConfirmButton onClick={
+          () => {
+            if(LoggedIn){
+              console.log('Logged in')
+            }else{
+              login();
+            }
+          }
+        }>Checkout</ConfirmButton>
       </DialogFooter>
     </OrderStyled>
   );
